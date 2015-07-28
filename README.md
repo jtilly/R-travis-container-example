@@ -37,5 +37,5 @@ To illustrate how long all of this takes, I put together a package with lots of 
 
 |                           | Duration          |
 |---------------------------|---------------|
-| Initial build time without cache | 9 min 2 sec      |
-| All subsequent builds that cache dependencies    | 1 min  0 sec  |
+| Initial build time without cache ([log file](https://s3.amazonaws.com/archive.travis-ci.org/jobs/73105072/log.txt)) | 9 min 2 sec      |
+| All subsequent builds that cache dependencies ([log file](https://s3.amazonaws.com/archive.travis-ci.org/jobs/73106362/log.txt))   | 1 min  0 sec  |
