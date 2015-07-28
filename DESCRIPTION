@@ -1,0 +1,17 @@
+Package: container
+Type: Package
+Title: Example package that uses the container-based infrastructure from Travis
+Version: 1.0
+Date: 2015-07-28
+Author: Jan Tilly
+Maintainer: Jan Tilly <jtilly@econ.upenn.edu>
+Description: Example R package that is built using the container-based
+    infrastructure from Travis. See here for more details:
+    http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+    This package depends on ggplot2, Rcpp, RcppArmadillo to showcase that it
+    can be build quickly despite all the clutter.
+License: GPL-2
+Imports: Rcpp (>= 0.11.6)
+Depends: ggplot2
+LinkingTo: Rcpp, RcppArmadillo
+Suggests: testthat
