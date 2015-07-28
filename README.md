@@ -1,9 +1,12 @@
+[![Build Status](https://travis-ci.org/jtilly/R-travis-container-example.svg?branch=master)](https://travis-ci.org/jtilly/R-travis-container-example) 
+[![Coverage Status](https://coveralls.io/repos/jtilly/R-travis-container-example/badge.svg?branch=master&service=github)](https://coveralls.io/github/jtilly/R-travis-container-example?branch=master)
+
 # R-travis-container-example
-Example R package that is built using the container-based infrastructure from Travis
+This repository contains an example `R` package that is built using the container-based infrastructure from Travis.
 
-Using the container-based infrastructure from Travis to build R packages is straightforward and can be very fast when we make use of the caching functions that the containers provide. 
+Using the container-based infrastructure from Travis to build R packages is straightforward and can be very fast when we cache dependent packages. 
 
-To use R from within the container I add the following lines to `.travis.yml`:
+To use R from within the container I added the following lines to my `.travis.yml`:
 ```{yml}
 addons:
   apt:
@@ -12,22 +15,27 @@ addons:
     packages:
     - r-base-dev
 ```
-I then store all installed `R` packages in the folder `~/Rlib` that is then going be cached. 
+I store all installed `R` packages in the directory `~/Rlib` that is eventually going be cached. 
 ```{yml}
 cache:
   directories: 
     - ~/Rlib
 ```
-I then install and test the package using Hadley's `devtools` package, which is only installed if needed: 
+I then install and test my package using `Rscript` to execute the following lines of `R` code:
 ```{R}
 if (!"devtools" %in% rownames(installed.packages())) { 
     install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/") 
 }
+if (!"covr" %in% rownames(installed.packages())) { 
+    install.packages("covr", dependencies=TRUE, repos="http://cran.rstudio.com/") 
+}
+devtools::install(pkg = ".", dependencies = TRUE)
+devtools::test()
 ```
 
 To illustrate how long all of this takes, I put together a package with lots of "heavy" dependencies: `Rcpp`, `RcppArmadillo`, and `ggplot2`.
 
-|                           | duration          |
+|                           | Duration          |
 |---------------------------|---------------|
-| Initial build time without cache: | 9 min 2 sec      |
-| All subsequent builds that cache dependencies:    |    |
+| Initial build time without cache | 9 min 2 sec      |
+| All subsequent builds that cache dependencies    | 1 min  0 sec  |
