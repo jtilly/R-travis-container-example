@@ -21,7 +21,7 @@ cache:
   directories: 
     - ~/Rlib
 ```
-I then install and test my package using `Rscript` to execute the following lines of `R` code:
+I then install my package using `devtools::install`. I use `testthat` to perform unit tests and I use `covr` to report the test coverage. 
 ```{R}
 if (!"devtools" %in% rownames(installed.packages())) { 
     install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/") 
@@ -41,4 +41,4 @@ To illustrate how long all of this takes, I put together a package with lots of 
 | All subsequent builds that cache dependencies ([log file](https://s3.amazonaws.com/archive.travis-ci.org/jobs/73106362/log.txt))   | 1 min  0 sec  |
 
 
-The obvious shortcoming of this approach is that all dependencies are in fact cached. Therefore, if some of the required packages change, we need to manually delete the cache over at Travis to download and compile these packages again. 
+The obvious shortcoming of this approach is that all dependencies are in fact cached. Therefore, if some of the dependent packages change, we need to manually delete the cache over at Travis to download and compile these packages again. 
