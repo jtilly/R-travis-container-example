@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/jtilly/R-travis-container-example.svg?branch=master)](https://travis-ci.org/jtilly/R-travis-container-example) 
 [![Coverage Status](https://coveralls.io/repos/jtilly/R-travis-container-example/badge.svg?branch=master&service=github)](https://coveralls.io/github/jtilly/R-travis-container-example?branch=master)
 
-# R-travis-container-example
+# Building R packages with Travis CI containers
 This repository contains an example `R` package that is built using the container-based infrastructure from [Travis CI](https://travis-ci.org/).
 
 The container-based infrastructure from Travis CI to build `R` packages can be very fast when we cache dependent packages. The main difference between the containerized infrastructure and the "traditional" approach is that with containers we cannot use `sudo` anymore. Therefore, we cannot piece together our favorite version of `R`  using `sudo apt-get install` or rely on binary packages (e.g. from [c2d4u]( https://launchpad.net/~marutter/+archive/ubuntu/c2d4u)). 
