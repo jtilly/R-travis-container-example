@@ -2,7 +2,7 @@
 title: 'Example R package that is built using the container-based infrastructure from Travis CI'
 author: '[Jan Tilly](mailto:jtilly@econ.upenn.edu)'
 date: "July 28, 2015"
-output: pdf_document
+output: html_document
 vignette: >
   %\VignetteIndexEntry{Example R package that is built using the container-based infrastructure from Travis CI}
   %\VignetteEngine{knitr::rmarkdown}
