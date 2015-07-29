@@ -15,7 +15,7 @@ addons:
     packages:
     - r-base-dev
 ```
-The list of [sources](https://github.com/travis-ci/apt-source-whitelist) and [packages](https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise) that Travis is allows is fairly limited. However, [`r-packages-precise`](https://cran.r-project.org/bin/linux/ubuntu/) is white-listed and contains a fairly up-to-date release of `R`. 
+The list of [sources](https://github.com/travis-ci/apt-source-whitelist) and [packages](https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise) that Travis allows is fairly limited. However, [`r-packages-precise`](https://cran.r-project.org/bin/linux/ubuntu/) is white-listed and contains a fairly up-to-date release of `R`. 
 
 I store all installed `R` packages in the directory `~/Rlib` that is eventually going be cached. 
 ```{yml}
