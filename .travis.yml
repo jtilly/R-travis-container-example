@@ -44,7 +44,7 @@ install:
   - Rscript -e 'if(!"devtools" %in% rownames(installed.packages())) { install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/") }'
   - Rscript -e 'if(!"covr" %in% rownames(installed.packages())) { install.packages("covr", dependencies=TRUE, repos="http://cran.rstudio.com/") }'
   - Rscript -e 'devtools::install(pkg = ".", dependencies = TRUE)'
-  - Rscript -e 'devtools::build_vignettes()'
+  - Rscript -e 'knitr::knit("vignettes/container-vignette.Rmd")'
 
 # run devtools::test() and check if the package passes all the tests
 # delete package from ~/Rlib so that it won't be cached
