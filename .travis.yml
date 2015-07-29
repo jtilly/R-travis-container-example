@@ -24,6 +24,8 @@ addons:
     - r-packages-precise
     packages:
     - r-base-dev
+    - pandoc
+    - texlive-latex-recommended
 
 # cache local R libraries directory:
 cache:
