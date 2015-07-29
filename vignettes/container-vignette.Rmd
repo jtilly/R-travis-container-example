@@ -1,0 +1,17 @@
+---
+title: 'Example R package that is built using the container-based infrastructure from Travis CI'
+author: '[Jan Tilly](mailto:jtilly@econ.upenn.edu)'
+date: "July 28, 2015"
+output: pdf_document
+vignette: >
+  %\VignetteIndexEntry{Example R package that is built using the container-based infrastructure from Travis CI}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+This is just a test with a little bit of \LaTeX: $x=1,2, \ldots, \infty$.
+```{r}
+library(container)
+rcpparma_outerproduct(c(1,2,3))
+```
+That's it. There's nothing more to see here.
