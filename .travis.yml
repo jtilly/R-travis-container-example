@@ -23,10 +23,8 @@ addons:
     sources:
     - r-packages-precise
     packages:
-    - r-base-dev
-    - r-cran-lattice
-    - r-cran-matrix
-    - r-cran-nlme
+    - r-base
+    - r-recommended
 
 # cache local R libraries directory:
 cache:
