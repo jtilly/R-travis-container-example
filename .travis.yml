@@ -6,10 +6,6 @@ language: c
 # use containers
 sudo: false
 
-# define package name
-env:
-  - PKG_NAME=container
-
 # only run for pushes to master branch
 branches:
   only:
