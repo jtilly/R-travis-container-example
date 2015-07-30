@@ -45,12 +45,14 @@ install:
   - Rscript -e 'if(!"devtools" %in% rownames(installed.packages())) { install.packages("devtools", dependencies = TRUE) }'
   - Rscript -e 'if(!"covr" %in% rownames(installed.packages())) { install.packages("covr", dependencies = TRUE) }'
   - Rscript -e 'update.packages(ask = FALSE)'
-  - Rscript -e 'devtools::install(pkg = ".", dependencies = TRUE)'
-  
+  - Rscript -e 'devtools::install_deps(pkg = ".", dependencies = TRUE)'
+
 # run devtools::test() and check if the package passes all the tests
 # delete package from ~/Rlib so that it won't be cached
 script: 
-  - Rscript -e 'devtools::test()'
+  - R CMD build --no-build-vignettes --no-manual .
+  - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
+  - R CMD check "${PKG_FILE_NAME}" --no-build-vignettes --no-manual --as-cran
   - rm -f -r ~/Rlib/$PKG_NAME
 
 # report coverage rate to coveralls
