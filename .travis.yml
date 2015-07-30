@@ -24,7 +24,6 @@ addons:
     - r-packages-precise
     packages:
     - r-base-dev
-    - r-cran-lattice
 
 # cache local R libraries directory:
 cache:
