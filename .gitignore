@@ -6,3 +6,4 @@
 *.Rproj
 *.o
 *.so
+.Rproj.user
