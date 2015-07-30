@@ -18,3 +18,8 @@ test_that("rcpparma_bothproducts", {
     expect_true(identical(res$inner, 14))
     expect_true(identical(res$outer, structure(c(1, 2, 3, 2, 4, 6, 3, 6, 9), .Dim = c(3L, 3L))))
 })
+
+# let's write a test that failes (to check if the build fails)
+test_that("fail", {
+    expect_true(FALSE)
+})
