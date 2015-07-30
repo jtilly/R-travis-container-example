@@ -23,17 +23,6 @@ cache:
   directories: 
     - ~/Rlib
 ```
-I then install my package using `devtools::install`. I use `testthat` to perform unit tests and I use `covr` to report the test coverage. 
-```{R}
-if (!"devtools" %in% rownames(installed.packages())) { 
-    install.packages("devtools", dependencies=TRUE, repos="http://cran.rstudio.com/") 
-}
-if (!"covr" %in% rownames(installed.packages())) { 
-    install.packages("covr", dependencies=TRUE, repos="http://cran.rstudio.com/") 
-}
-devtools::install(pkg = ".", dependencies = TRUE)
-devtools::test()
-```
 
 To illustrate how long all of this takes, I put together a package with lots of "heavy" dependencies: `Rcpp`, `RcppArmadillo`, and `ggplot2`.
 
