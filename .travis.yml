@@ -26,6 +26,7 @@ addons:
     - r-base-dev
     - r-cran-lattice
     - r-cran-matrix
+    - r-cran-nlme
 
 # cache local R libraries directory:
 cache:
