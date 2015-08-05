@@ -16,7 +16,8 @@ addons:
   apt:
     packages:
     - r-recommended
-    - latex
+    - texlive
+    - pandoc
 
 # cache local R libraries directory:
 cache:
