@@ -18,7 +18,7 @@ addons:
     sources:
     - r-packages-precise
     packages:
-    - r-base	
+    - r-base-dev	
     - r-recommended
     - texlive
     - pandoc
