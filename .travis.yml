@@ -11,15 +11,12 @@ branches:
   only:
    - master
 
-# install R: use r-packages-precise (https://cran.r-project.org/bin/linux/ubuntu/precise/) 
-# as source which is white listed (https://github.com/travis-ci/apt-source-whitelist/)
+# install R
 addons:
   apt:
-    sources:
-    - r-packages-precise
     packages:
-    - r-base-dev
     - r-recommended
+    - latex
 
 # cache local R libraries directory:
 cache:
