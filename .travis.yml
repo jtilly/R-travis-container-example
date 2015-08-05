@@ -15,6 +15,7 @@ branches:
 addons:
   apt:
     packages:
+    - r-base-dev
     - r-recommended
     - texlive
     - pandoc
