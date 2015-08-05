@@ -11,14 +11,15 @@ branches:
   only:
    - master
 
-# install R
+# install R: use r-packages-precise (https://cran.r-project.org/bin/linux/ubuntu/precise/) 
+# as source which is white listed (https://github.com/travis-ci/apt-source-whitelist/)
 addons:
   apt:
+    sources:
+    - r-packages-precise
     packages:
     - r-base-dev
     - r-recommended
-    - texlive
-    - pandoc
 
 # cache local R libraries directory:
 cache:
@@ -41,7 +42,7 @@ install:
   - echo '.travis.yml' > .Rbuildignore
   - Rscript -e 'if(!"devtools" %in% rownames(installed.packages())) { install.packages("devtools", dependencies = TRUE) }'
   - Rscript -e 'if(!"covr" %in% rownames(installed.packages())) { install.packages("covr", dependencies = TRUE) }'
-  #- Rscript -e 'update.packages(ask = FALSE, instlib = "~/Rlib")'
+  - Rscript -e 'update.packages(ask = FALSE, instlib = "~/Rlib")'
   - Rscript -e 'devtools::install_deps(pkg = ".", dependencies = TRUE)'
 
 # Build and check package
