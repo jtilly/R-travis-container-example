@@ -44,7 +44,7 @@ install:
   - Rscript -e 'if(!"devtools" %in% rownames(installed.packages())) { install.packages("devtools", dependencies = TRUE, INSTALL_opts = "--no-build-vignettes --no-manual") }'
   - Rscript -e 'if(!"covr" %in% rownames(installed.packages())) { install.packages("covr", dependencies = TRUE, INSTALL_opts = "--no-build-vignettes --no-manual") }'
   - Rscript -e 'update.packages(ask = FALSE, instlib = "~/Rlib", INSTALL_opts = "--no-build-vignettes --no-manual")'
-  - Rscript -e 'devtools::install_deps(pkg = ".", dependencies = TRUE, quick = TRUE)'
+  - Rscript -e 'devtools::install_deps(pkg = ".", dependencies = TRUE)'
 
 # Build and check package
 script:
