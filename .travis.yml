@@ -20,7 +20,6 @@ addons:
     packages:
     - r-base-dev	
     - r-recommended
-    - libcurl3
     - pandoc
 
 # cache local R libraries directory:
