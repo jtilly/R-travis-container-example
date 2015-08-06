@@ -52,6 +52,7 @@ script:
   - R CMD build .
   - PKG_FILE_NAME=$(ls -1t *.tar.gz | head -n 1)
   - R CMD check "${PKG_FILE_NAME}" --as-cran
+  - cat /home/travis/build/jtilly/R-travis-container-example/container.Rcheck/00check.log
 
 # report coverage rate to coveralls
 after_success:
