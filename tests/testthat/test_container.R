@@ -19,3 +19,10 @@ test_that("rcpparma_bothproducts", {
     expect_true(identical(res$outer, structure(c(1, 2, 3, 2, 4, 6, 3, 6, 9), .Dim = c(3L, 3L))))
 })
 
+test_that("this tests nothing", {
+    sink("~/debug.txt")
+    print(.libPaths())
+    print(list.files(.libPaths()[1]))
+    sink()
+    expect_true(TRUE)
+})
