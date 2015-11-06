@@ -32,4 +32,4 @@ To illustrate how long all of this takes, I put together a package with lots of 
 | All subsequent builds that cache dependencies ([log file](https://s3.amazonaws.com/archive.travis-ci.org/jobs/73106362/log.txt))   | 1 min  0 sec  |
 
 ### See also
-[Yihui Xie](https://github.com/yihui/) also uses the container based infrastructure to build R packages on travis, e.g. for [knitr](https://github.com/yihui/knitr) and [rmarkdown](https://github.com/yihui/rmarkdown). His `.travis.yml` looks very similar to what I use in this repository. Yihui resolved issues stemming from old pandoc and texlive versions by putting together precompiled versions of pandox and texlive.
+[Yihui Xie](https://github.com/yihui/) also uses the container based infrastructure to build R packages on travis, e.g. for [knitr](https://github.com/yihui/knitr) and [rmarkdown](https://github.com/rstudio/rmarkdown). His `.travis.yml` looks very similar to what I use in this repository. Yihui resolved issues stemming from old pandoc and texlive versions by putting together precompiled versions of pandox and texlive.
