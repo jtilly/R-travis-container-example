@@ -4,7 +4,7 @@
 # Building R packages with Travis CI containers
 This repository contains an example `R` package that is built using the container-based infrastructure from [Travis CI](https://travis-ci.org/).
 
-*NOTE: As of March 2016, Travis CI supports R using containers through the default option `language: R`, which renders this repository obsolete. See [here](http://blog.rstudio.org/2016/03/09/r-on-travis-ci/).*
+*NOTE: As of March 2016, Travis CI supports R using containers through the default option `language: r`, which renders this repository obsolete. See [here](http://blog.rstudio.org/2016/03/09/r-on-travis-ci/).*
 
 The container-based infrastructure from Travis CI to build `R` packages can be very fast when we cache dependent packages. The main difference between the containerized infrastructure and the "traditional" approach is that with containers we cannot use `sudo` anymore. Therefore, we cannot piece together our favorite version of `R`  using `sudo apt-get install` or rely on binary packages (e.g. from [c2d4u]( https://launchpad.net/~marutter/+archive/ubuntu/c2d4u)). 
 
