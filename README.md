@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/jtilly/R-travis-container-example.svg?branch=master)](https://travis-ci.org/jtilly/R-travis-container-example) 
+[![Build Status](https://travis-ci.org/jtilly/R-travis-container-example.svg?branch=master)](https://travis-ci.org/jtilly/R-travis-container-example)
 [![Coverage Status](https://coveralls.io/repos/jtilly/R-travis-container-example/badge.svg?branch=master&service=github)](https://coveralls.io/github/jtilly/R-travis-container-example?branch=master)
 
 # Building R packages with Travis CI containers
@@ -6,10 +6,10 @@ This repository contains an example `R` package that is built using the containe
 
 *NOTE: As of March 2016, Travis CI supports R using containers through the default option `language: r`, which renders this repository obsolete. See [here](http://blog.rstudio.org/2016/03/09/r-on-travis-ci/).*
 
-The container-based infrastructure from Travis CI to build `R` packages can be very fast when we cache dependent packages. The main difference between the containerized infrastructure and the "traditional" approach is that with containers we cannot use `sudo` anymore. Therefore, we cannot piece together our favorite version of `R`  using `sudo apt-get install` or rely on binary packages (e.g. from [c2d4u]( https://launchpad.net/~marutter/+archive/ubuntu/c2d4u)). 
+The container-based infrastructure from Travis CI to build `R` packages can be very fast when we cache dependent packages. The main difference between the containerized infrastructure and the "traditional" approach is that with containers we cannot use `sudo` anymore. Therefore, we cannot piece together our favorite version of `R`  using `sudo apt-get install` or rely on binary packages (e.g. from [c2d4u]( https://launchpad.net/~marutter/+archive/ubuntu/c2d4u)).
 
 To use `R` from within the container I added the following lines to my `.travis.yml`:
-```{yml}
+```yml
 addons:
   apt:
     sources:
@@ -17,12 +17,12 @@ addons:
     packages:
     - r-base-dev
 ```
-The list of [sources](https://github.com/travis-ci/apt-source-whitelist) and [packages](https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise) that Travis allows is fairly limited. However, [`r-packages-precise`](https://cran.r-project.org/bin/linux/ubuntu/) is white-listed and contains an up-to-date release of `R`. 
+The list of [sources](https://github.com/travis-ci/apt-source-whitelist) and [packages](https://github.com/travis-ci/apt-package-whitelist/blob/master/ubuntu-precise) that Travis allows is fairly limited. However, [`r-packages-precise`](https://cran.r-project.org/bin/linux/ubuntu/) is white-listed and contains an up-to-date release of `R`.
 
-I store all installed `R` packages in the directory `~/Rlib` that is eventually going be cached. 
-```{yml}
+I store all installed `R` packages in the directory `~/Rlib` that is eventually going be cached.
+```yml
 cache:
-  directories: 
+  directories:
     - ~/Rlib
 ```
 
